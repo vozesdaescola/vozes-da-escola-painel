@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Interno - Vozes da Escola</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Painel Interno da Equipe</h1>
+  </header>
+
+  <main>
+    <!-- LOGIN -->
+    <section id="login-section">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Usuário">
+      <input type="password" id="password" placeholder="Senha">
+      <button onclick="login()">Entrar</button>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" style="display:none;">
+      <h2>Bem-vindo, equipe!</h2>
+
+      <!-- NOVA PUBLICAÇÃO -->
+      <div id="new-article">
+        <h3>Criar nova tarefa / artigo</h3>
+        <input type="text" id="title" placeholder="Título">
+        <textarea id="content" placeholder="Descrição"></textarea>
+        <button onclick="addArticle()">Publicar</button>
+      </div>
+
+      <!-- LISTA DE PUBLICAÇÕES -->
+      <div id="articles-list">
+        <h3>Tarefas / Artigos publicados</h3>
+        <ul id="articles"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
