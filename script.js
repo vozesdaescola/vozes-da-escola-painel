@@ -1,7 +1,6 @@
-const WEBAPP_URL = "https://script.google.com/macros/library/d/1nHvsIaQt19rDUxpcxwamKmoac_4orcJIZwMSXvorreR2bixGMw2-vfVc/1"; // Cole a URL do Apps Script aqui
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwNVNax-4NU8ascmK-UjVhjYeWNuKu5nFukwWQTUbgbgwNT6Ro4gMYBK3SwG1l_vHJf/exec"; // Cole a URL do Apps Script
 let articles = [];
 
-// Membros cadastrados (para login)
 const members = [
   {username: "alice", password: "123"},
   {username: "bob", password: "456"}
@@ -46,7 +45,7 @@ function renderArticles() {
   });
 }
 
-// CRIAR NOVO ARTIGO E ENVIAR AO SHEETS
+// CRIAR NOVO ARTIGO
 function addArticle() {
   const title = document.getElementById("title").value;
   const content = document.getElementById("content").value;
@@ -56,7 +55,6 @@ function addArticle() {
     const date = new Date().toLocaleString();
     const newArticle = {titulo: title, conteudo: content, autor: author, data: date};
 
-    // Envia para Google Sheets
     fetch(WEBAPP_URL, {
       method: "POST",
       body: JSON.stringify(newArticle),
@@ -84,7 +82,7 @@ function addArticle() {
   }
 }
 
-// ATUALIZA AUTOMATICAMENTE A CADA 10 SEGUNDOS
+// ATUALIZA AUTOMATICAMENTE
 function startAutoRefresh() {
   setInterval(loadArticles, 10000);
 }
